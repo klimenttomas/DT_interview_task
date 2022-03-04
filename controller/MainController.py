@@ -79,11 +79,11 @@ class Controller:
         svc_results: list = worker_svc.predict_on_test_set(df)
         svc_result_df = pd.DataFrame(svc_results, columns=['review_id', 'user_suggestion'])
         # saving predictions on final test file to csv
-        svc_result_df.to_csv("output_svc.csv", sep=';', index=False)
+        svc_result_df.to_csv("sample_submission_svc.csv", sep=',', index=False)
 
         # Predictions making on final testset by ANN -------------------------------------------------------------------
         ann_results: list = worker_ann.predict_on_test_set(df)
         ann_result_df = pd.DataFrame(ann_results, columns=['review_id', 'user_suggestion'])
         # saving predictions on final test file to csv
-        ann_result_df.to_csv("output_ann.csv", sep=';', index=False)
+        ann_result_df.to_csv("sample_submission_ann.csv", sep=',', index=False)
 
